@@ -836,180 +836,84 @@
     </script>
     <script>
 	const EGYPT_BOUNDS = {
-  north: 31.743530098039933, 
-  south:  21.85182102204757, 
-  west: 21.681974538347,
-  east: 38.303225724494986
-};
-
-const CONFIGURATION = {
+		  north: 31.743530098039933, 
+		  south:  21.85182102204757, 
+		  west: 21.681974538347,
+		  east: 38.303225724494986
+		};
+     const CONFIGURATION = {
   "locations": [
-    {"title":"Scuba World Divers Marsa Alam Lagoon View Hotel","address1":"LAGOON VIEW RESORTS","address2":"MARSA ALAM, Red Sea Governorate, Egypt","coords":{"lat":24.9137237,"lng":34.9710754},"placeId":"ChIJAQAAAPTptBURcTj0vAGaLa8"},
-    {"title":"Scuba World Divers Makadi Bay","address1":"Makadi Bay","address2":"Qesm Hurghada, Egypt","coords":{"lat":26.9917033,"lng":33.899044},"placeId":"ChIJIRtmt_d7TRQRpubUEEhnbuI"},
-    {"title":"Scuba World Divers Soma Bay","address1":"Mövenpick Resort Soma Bay","address2":"Safaga, Red Sea Governorate, Egypt","coords":{"lat":26.8280601,"lng":33.941986},"placeId":"ChIJUyTHi5ZxTRQRJRB8O73ZNOY"},
-    {"title":"Scuba World Divers - Iberotel Costa Mares","address1":"Iberotel Costa Mares","address2":"القصير, البحر الأحمر, Egypt","coords":{"lat":25.5083078,"lng":34.6494284},"placeId":"ChIJ9aZFK-uzTBQRODplY_3pas0"},
-    {"title":"Scuba World Divers - Mövenpick Resort \u0026 Spa El Gouna","address1":"Movenpick Hotel ElGouna","address2":"Hurghada, Red Sea Governorate, Egypt","coords":{"lat":27.3919853,"lng":33.6863049},"placeId":"ChIJ8fimvOxmUhQReDme1CAfm24"},
-    {"title":"Scuba World Divers Solymar Reef Marsa / Jaz Grand Marsa","address1":"El Qoseir, Red Sea Governorate 1927220","address2":"Marsa Alam, Red Sea Governorate, Egypt","coords":{"lat":25.5977225,"lng":34.6099508},"placeId":"ChIJIQKB9pbBtBURIQhaicXuYh4"},
-    {"title":"Scuba World Divers Solymar Soma Beach","address1":"Solymar Soma Beach","address2":"Soma Bay, Red Sea Governorate, Egypt","coords":{"lat":26.8326003,"lng":33.9459987},"placeId":"ChIJfbhamGtxTRQRcwMggJJyNxk"},
-    {"title":"Scuba World - Sheraton Miramar Resort El Gouna","address1":"El Gouna","address2":"Hurghada, Red Sea Governorate, Egypt","coords":{"lat":27.4062106,"lng":33.6783936},"placeId":"ChIJzcUOaQVnUhQR0JQspinhNDM"},
-    {"title":"Scuba World Divers - Amarina Jannah Resort & Aqua Park","address1":"Marsa Alam","address2":"Marsa Alam, Red Sea Governorate, Egypt","coords":{"lat":25.5848124,"lng":34.6278555},"placeId":"ChIJVeokvbNXsxURjZy4rWgf4k0"}
+    {
+      "title": "Scuba World Divers Marsa Alam Lagoon View Hotel",
+      "address1": "LAGOON VIEW RESORTS",
+      "address2": "MARSA ALAM, Red Sea Governorate, Egypt",
+      "coords": { "lat": 24.9137237, "lng": 34.9710754 },
+      "placeId": "ChIJAQAAAPTptBURcTj0vAGaLa8"
+    },
+    {
+      "title": "Scuba World Divers Makadi Bay",
+      "address1": "Makadi Bay",
+      "address2": "Qesm Hurghada, Egypt",
+      "coords": { "lat": 26.9917033, "lng": 33.899044 },
+      "placeId": "ChIJIRtmt_d7TRQRpubUEEhnbuI"
+    },
+    {
+      "title": "Scuba World Divers Soma Bay",
+      "address1": "Mövenpick Resort Soma Bay",
+      "address2": "Safaga, Red Sea Governorate, Egypt",
+      "coords": { "lat": 26.8280601, "lng": 33.941986 },
+      "placeId": "ChIJUyTHi5ZxTRQRJRB8O73ZNOY"
+    },
+    {
+      "title": "Scuba World Divers - Iberotel Costa Mares",
+      "address1": "Iberotel Costa Mares",
+      "address2": "القصير, البحر الأحمر, Egypt",
+      "coords": { "lat": 25.5083078, "lng": 34.6494284 },
+      "placeId": "ChIJ9aZFK-uzTBQRODplY_3pas0"
+    },
+    {
+      "title": "Scuba World Divers - Mövenpick Resort & Spa El Gouna",
+      "address1": "Movenpick Hotel ElGouna",
+      "address2": "Hurghada, Red Sea Governorate, Egypt",
+      "coords": { "lat": 27.3919853, "lng": 33.6863049 },
+      "placeId": "ChIJ8fimvOxmUhQReDme1CAfm24"
+    },
+    {
+      "title": "Scuba World Divers Solymar Reef Marsa / Jaz Grand Marsa",
+      "address1": "El Qoseir, Red Sea Governorate 1927220",
+      "address2": "Marsa Alam, Red Sea Governorate, Egypt",
+      "coords": { "lat": 25.5977225, "lng": 34.6099508 },
+      "placeId": "ChIJIQKB9pbBtBURIQhaicXuYh4"
+    },
+    {
+      "title": "Scuba World Divers Solymar Soma Beach",
+      "address1": "Solymar Soma Beach",
+      "address2": "Soma Bay, Red Sea Governorate, Egypt",
+      "coords": { "lat": 26.8326003, "lng": 33.9459987 },
+      "placeId": "ChIJfbhamGtxTRQRcwMggJJyNxk"
+    },
+    {
+      "title": "Scuba World Divers - Amarina Jannah Resort & Aqua Park",
+      "address1": "Marsa Alam",
+      "address2": "Marsa Alam, Red Sea Governorate, Egypt",
+      "coords": { "lat": 25.5848124, "lng": 34.6278555 },
+      "placeId": "ChIJVeokvbNXsxURjZy4rWgf4k0"
+    },
+    {
+      "title": "Scuba World - Sheraton Miramar Resort El Gouna",
+      "address1": "El Gouna",
+      "address2": "Hurghada, Red Sea Governorate, Egypt",
+      "coords": { "lat": 27.4062106, "lng": 33.6783936 },
+      "placeId": "ChIJzcUOaQVnUhQR0JQspinhNDM"
+    }
   ],
-  "mapOptions": {
-    restriction: { latLngBounds: EGYPT_BOUNDS },
-    "center": { "lat": 26.9917033, "lng": 33.899044 },
-    "fullscreenControl": true,
-    "mapTypeId": 'roadmap',
-    "mapTypeControl": false,
-    "streetViewControl": false,
-    "zoom": 4,
-    "zoomControl": true,
-    "maxZoom": 17,
-    "styles": [
-      {
-          "featureType": "all",
-          "elementType": "labels.text.fill",
-          "stylers": [
-              {
-                  "color": "#ffffff"
-              }
-          ]
-      },
-      {
-          "featureType": "all",
-          "elementType": "labels.text.stroke",
-          "stylers": [
-              {
-                  "color": "#000000"
-              },
-              {
-                  "lightness": 13
-              }
-          ]
-      },
-      {
-          "featureType": "administrative",
-          "elementType": "geometry.fill",
-          "stylers": [
-              {
-                  "color": "#000000"
-              }
-          ]
-      },
-      {
-          "featureType": "administrative",
-          "elementType": "geometry.stroke",
-          "stylers": [
-              {
-                  "color": "#144b53"
-              },
-              {
-                  "lightness": 14
-              },
-              {
-                  "weight": 1.4
-              }
-          ]
-      },
-      {
-          "featureType": "landscape",
-          "elementType": "all",
-          "stylers": [
-              {
-                  "color": "#08304b"
-              }
-          ]
-      },
-      {
-          "featureType": "poi",
-          "elementType": "geometry",
-          "stylers": [
-              {
-                  "color": "#0c4152"
-              },
-              {
-                  "lightness": 5
-              }
-          ]
-      },
-      {
-          "featureType": "road.highway",
-          "elementType": "geometry.fill",
-          "stylers": [
-              {
-                  "color": "#000000"
-              }
-          ]
-      },
-      {
-          "featureType": "road.highway",
-          "elementType": "geometry.stroke",
-          "stylers": [
-              {
-                  "color": "#0b434f"
-              },
-              {
-                  "lightness": 25
-              }
-          ]
-      },
-      {
-          "featureType": "road.arterial",
-          "elementType": "geometry.fill",
-          "stylers": [
-              {
-                  "color": "#000000"
-              }
-          ]
-      },
-      {
-          "featureType": "road.arterial",
-          "elementType": "geometry.stroke",
-          "stylers": [
-              {
-                  "color": "#0b3d51"
-              },
-              {
-                  "lightness": 16
-              }
-          ]
-      },
-      {
-          "featureType": "road.local",
-          "elementType": "geometry",
-          "stylers": [
-              {
-                  "color": "#000000"
-              }
-          ]
-      },
-      {
-          "featureType": "transit",
-          "elementType": "all",
-          "stylers": [
-              {
-                  "color": "#146474"
-              }
-          ]
-      },
-      {
-          "featureType": "water",
-          "elementType": "all",
-          "stylers": [
-              {
-                  "color": "#021019"
-              }
-          ]
-      }
-    ]
-  },
-  "mapsApiKey": "YOUR_API_KEY",
-  "capabilities": {"input":true,"autocomplete":true,"directions":true,"distanceMatrix":true,"details":true,"actions":false}
-};
+        "mapOptions": {restriction: {latLngBounds: EGYPT_BOUNDS},"center":{"lat":26.9917033,"lng":33.899044},"fullscreenControl":true,"mapTypeId": 'satellite',"mapTypeControl":false,"streetViewControl":false,"zoom":4,"zoomControl":true,"maxZoom":17,"mapId":""},
+        "mapsApiKey": "AIzaSyBUl0wCqN7qA_AaUjsPQ72iFu9IubWJaG4",
+        "capabilities": {"input":true,"autocomplete":true,"directions":true,"distanceMatrix":true,"details":true,"actions":false}
+      };
 
-function initMap() {
-  new LocatorPlus(CONFIGURATION);
-}
-
+      function initMap() {
+        new LocatorPlus(CONFIGURATION);
       }
     </script>
     <script id="locator-result-items-tmpl" type="text/x-handlebars-template">
