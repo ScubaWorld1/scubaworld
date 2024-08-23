@@ -585,20 +585,9 @@
             }
           });
 
-          // Update the locator's idea of the user's country, used for units. Use
-          // `formatted_address` instead of the more structured `address_components`
-          // to avoid an additional billed call.
-          const addressParts = address.split(' ');
-          locator.userCountry = addressParts[addressParts.length - 1];
-
-          // Update map bounds to include the new location marker.
           locator.updateBounds();
-
-          // Update the result list so we can sort it by proximity.
           locator.renderResultsList();
-
           locator.updateTravelTimes();
-
           locator.clearDirections();
         };
 
@@ -634,30 +623,21 @@
           geocodeSearch(searchInputEl.value.trim());
         });
 
-        // Initialize Autocomplete.
-        initializeSearchInputAutocomplete(
-            locator, searchInputEl, geocodeSearch, updateSearchLocation);
-      }
-
-      /** Add Autocomplete to the search input. */
-      function initializeSearchInputAutocomplete(
-          locator, searchInputEl, fallbackSearch, searchLocationUpdater) {
-        // Set up Autocomplete on the search input. Bias results to map viewport.
+        // Initialize Autocomplete with places (e.g., hotels).
         const autocomplete = new google.maps.places.Autocomplete(searchInputEl, {
-          types: ['geocode'],
-          fields: ['place_id', 'formatted_address', 'geometry.location']
+            types: ['establishment'],  // Allows autocomplete to suggest places like hotels
+            fields: ['place_id', 'formatted_address', 'geometry.location']
         });
         autocomplete.bindTo('bounds', locator.map);
+
         autocomplete.addListener('place_changed', function() {
-          const placeResult = autocomplete.getPlace();
-          if (!placeResult.geometry) {
-            // Hitting 'Enter' without selecting a suggestion will result in a
-            // placeResult with only the text input value as the 'name' field.
-            fallbackSearch(placeResult.name);
-            return;
-          }
-          searchLocationUpdater(
-              placeResult.formatted_address, placeResult.geometry.location);
+            const placeResult = autocomplete.getPlace();
+            if (placeResult.geometry) {
+                updateSearchLocation(
+                    placeResult.formatted_address, placeResult.geometry.location);
+            } else {
+                geocodeSearch(searchInputEl.value.trim());
+            }
         });
       }
 
@@ -1042,7 +1022,7 @@
           <header>
             <h1 class="search-title">
               <img src="https://fonts.gstatic.com/s/i/googlematerialicons/place/v15/24px.svg" alt=""/>
-              Insert your hotel name and press enter.
+              Insert your hotel name.
             </h1>
             <div class="search-input">
               <input id="location-search-input" placeholder="Enter your hotel name">
